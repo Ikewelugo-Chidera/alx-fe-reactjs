@@ -6,7 +6,7 @@ import UserProfile from './components/UserProfile';
 function App() {
   return (
     <>
-    <UserProfile name="Brenda" age="22" bio="Frontend developer in the making!" />
+   <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <Header />
       <MainContent />
       <Footer />
