@@ -38,6 +38,13 @@ export const useRecipeStore = create(set => ({
       preparationTime: "20 minutes",
     }
   ],
+  addRecipe: (newRecipe) => set(state => ({
+    recipes: [...state.recipes, newRecipe]
+  })),
+  setRecipes: (newRecipes) => set(() => ({
+    recipes: newRecipes
+  })),
+  
   favorites: [],
   addFavorite: (recipeId) => set(state => ({ favorites: [...state.favorites, recipeId] })),
   removeFavorite: (recipeId) => set(state => ({
