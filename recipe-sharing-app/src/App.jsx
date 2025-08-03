@@ -6,7 +6,7 @@ import RecipeList from "./components/RecipeList";
 import SearchBar from "./components/SearchBar";
 import FavoritesList from "./components/FavoritesList";
 import RecommendationsList from "./components/RecommendationsList";
-import RecipeDetail from "./components/RecipeDetail";
+import RecipeDetail from "./components/RecipeDetails";
 
 function App() {
   const filterRecipes = useRecipeStore((state) => state.filterRecipes);
