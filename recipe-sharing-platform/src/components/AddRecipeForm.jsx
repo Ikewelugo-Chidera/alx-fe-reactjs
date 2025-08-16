@@ -34,9 +34,8 @@ function AddRecipeForm() {
       instructions: steps.split(".").map((s) => s.trim()).filter((s) => s),
     };
 
-    console.log("New Recipe:", newRecipe); // checker-safe (mock submit)
+    console.log("New Recipe:", newRecipe);
 
-    // Reset form + redirect to home
     setTitle("");
     setIngredients("");
     setSteps("");
@@ -44,20 +43,24 @@ function AddRecipeForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">Add a New Recipe</h1>
+    <div className="max-w-2xl mx-auto p-6 md:p-10">
+      <h1 className="text-3xl font-bold mb-6 text-center md:text-4xl">
+        Add a New Recipe
+      </h1>
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-lg rounded-xl p-6 space-y-5"
+        className="bg-white shadow-lg rounded-xl p-6 space-y-5 md:space-y-6"
       >
-        {/* Title */}
+        {}
         <div>
-          <label className="block text-lg font-medium mb-2">Recipe Title</label>
+          <label className="block text-lg font-medium mb-2 md:text-xl">
+            Recipe Title
+          </label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400"
+            className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-400 md:p-4"
             placeholder="Enter recipe title"
           />
           {errors.title && (
@@ -67,11 +70,13 @@ function AddRecipeForm() {
 
         {/* Ingredients */}
         <div>
-          <label className="block text-lg font-medium mb-2">Ingredients</label>
+          <label className="block text-lg font-medium mb-2 md:text-xl">
+            Ingredients
+          </label>
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg p-3 h-28 focus:ring-2 focus:ring-blue-400"
+            className="w-full border border-gray-300 rounded-lg p-3 h-28 focus:ring-2 focus:ring-blue-400 md:h-32"
             placeholder="List ingredients separated by commas"
           />
           {errors.ingredients && (
@@ -79,15 +84,15 @@ function AddRecipeForm() {
           )}
         </div>
 
-        {/* Steps */}
+        {}
         <div>
-          <label className="block text-lg font-medium mb-2">
+          <label className="block text-lg font-medium mb-2 md:text-xl">
             Preparation Steps
           </label>
           <textarea
             value={steps}
             onChange={(e) => setSteps(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg p-3 h-32 focus:ring-2 focus:ring-blue-400"
+            className="w-full border border-gray-300 rounded-lg p-3 h-32 focus:ring-2 focus:ring-blue-400 md:h-40"
             placeholder="Write preparation steps. Separate sentences with a period."
           />
           {errors.steps && (
@@ -95,11 +100,11 @@ function AddRecipeForm() {
           )}
         </div>
 
-        {/* Submit */}
+        {}
         <div className="text-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition w-full sm:w-auto"
+            className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition w-full sm:w-auto md:px-8 md:py-4"
           >
             Submit Recipe
           </button>
