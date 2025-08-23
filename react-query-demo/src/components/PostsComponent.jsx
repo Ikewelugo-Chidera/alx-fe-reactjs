@@ -17,7 +17,7 @@ export default function PostsComponent() {
     refetch,
     isFetching,
   } = useQuery({
-    queryKey: ["posts"],
+    queryKey: "posts",
     queryFn: fetchPosts,
     keepPreviousData: true,
     staleTime: 0,
