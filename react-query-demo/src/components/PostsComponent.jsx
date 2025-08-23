@@ -15,10 +15,12 @@ export default function PostsComponent() {
     isLoading,
     isError,
     refetch,
+    isFetching,
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 5000,
+    keepPreviousData: true,
+    staleTime: 0,
     cacheTime: 1000 * 60,
     refetchOnWindowFocus: false,
   });
@@ -48,6 +50,7 @@ export default function PostsComponent() {
       >
         Refetch Posts
       </button>
+      {isFetching && <p>🔄 Refetching...</p>} {}
       <ul>
         {data.map((post) => (
           <li key={post.id}>
